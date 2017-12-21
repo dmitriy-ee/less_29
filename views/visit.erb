@@ -22,8 +22,8 @@
 
 	<div class="form-group">
 		<label> Barberbitch: </label>
-		<select name="barber" class="form-control">
-		  <% @res_barber.each do |row| %>
+		<select name="barbers" class="form-control">
+		  <% @barbers.each do |row| %>
 		  <option <%= @barber == row['name'] ? 'selected' : '' %>><%= row['name'] %></option>
 		  <% end %>
 	    </select>
