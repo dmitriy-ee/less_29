@@ -7,17 +7,17 @@
 <form action = "visit" method ="POST" role = "form">
 	<div class="form-group">
 		<label> Enter you name: </label>
-		<input name="client[name]" type="text" class="form-control" placeholder="You name" value = "">
+		<input name="clients[name]" type="text" class="form-control" placeholder="You name" value = "<%= @c.name %>">
 	</div>
 
 	<div class="form-group">
 		<label> Enter you phone: </label>
-		<input name="client[phone]" type="text" class="form-control" placeholder="You phone" value = "" >
+		<input name="clients[phone]" type="text" class="form-control" placeholder="You phone" value = "<%= @c.phone %>" >
 	</div> 
 
 	<div class="form-group">
 		<label> When do you wait: </label>
-		<input name="client[datestamp]" type="text" class="form-control" placeholder="Enter datetime" value = "">
+		<input name="clients[datestamp]" type="text" class="form-control" placeholder="Enter datetime" value = "<%= @c.datestamp %>">
 	</div>
 
 	<div class="form-group">
