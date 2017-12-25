@@ -35,7 +35,9 @@ post '/visit' do
 	if c.save
 		erb "<h2> Recording... </h2>"
 	else
-		erb "<h2> Erroroo... </h2>"
+		@error = c.errors.full_messages.first
+		#erb "<h2> Erroroo... </h2>"
+		erb :visit_v2
 	end
 end
 
