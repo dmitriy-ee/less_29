@@ -7,6 +7,10 @@ require 'sqlite3'
 set :database, 'sqlite3:_database.db'
 
 class Clients < ActiveRecord::Base
+	# VALIDATIONS
+	validates :name, presence: true
+	validates :phone, presence: true
+	validates :datestamp, presence: true
 end
 
 class Barbers < ActiveRecord::Base
