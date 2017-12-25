@@ -1,0 +1,27 @@
+<table class="table table-striped">
+
+<thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">User</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Datestamp</th>
+      <th scope="col">Barber</th>
+    </tr>
+</thead>
+
+<% @clients.each do |client| %>
+
+  <tbody>
+    <tr>
+      <th scope="row"><%= client['id'] %></th>
+      <td><a href="/client/<%= client.id %>"><%= client['name'] %></a></td>
+      <td><%= client['phone'] %></td>
+      <td><%= client['datestamp'] %></td>
+      <td><%= client['barber'] %></td>
+    </tr>
+  </tbody>
+
+<% end %>
+
+</table>

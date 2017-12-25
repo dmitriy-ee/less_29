@@ -22,7 +22,7 @@
 
 	<div class="form-group">
 		<label> Barberbitch: </label>
-		<select name="barber" class="form-control">
+		<select name="clients[barber]" class="form-control">
 		  <% @barber.each do |row| %>
 		  <option <%= @barber == row['name'] ? 'selected' : '' %>><%= row['name'] %></option>
 		  <% end %>

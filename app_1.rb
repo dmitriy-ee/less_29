@@ -47,7 +47,10 @@ get '/barber/:id' do
 	erb :barber
 end
 
-
+get '/booking' do
+	@clients = Clients.order "created_at DESC" 
+	erb :booking
+end
 
 # post '/visit' do
 # 	@username = params[:username]
