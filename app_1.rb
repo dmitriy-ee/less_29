@@ -8,7 +8,7 @@ set :database, 'sqlite3:_database.db'
 
 class Clients < ActiveRecord::Base
 	# VALIDATIONS
-	validates :name, presence: true
+	validates :name, presence: true, length: {minimum: 3}
 	validates :phone, presence: true
 	validates :datestamp, presence: true
 end
