@@ -6,6 +6,6 @@ class CreateClients < ActiveRecord::Migration[5.1]
   		t.text :datestamp
   		t.text :barber
   		t.timestamps null: false
-  	end
+  end
   end
 end

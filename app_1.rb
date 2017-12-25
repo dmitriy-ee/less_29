@@ -13,11 +13,11 @@ class Barbers < ActiveRecord::Base
 end
 
 before do
-	@barbers = Barbers.all
+	@barber = Barbers.all
 end
 
 get '/' do
-	#@barbers = Barbers.all
+	#@barber = Barbers.all
 	@barbers = Barbers.order "created_at DESC" 
 	erb :index
 end
@@ -31,6 +31,16 @@ post '/visit' do
 	@phone = params[:phone]
 	@datetime = params[:datetime]
 	@barbers = params[:barbers]
+
+	c = Clients.new
+
+	c.name = @username
+	c.phone = @phone
+	c.datestamp = @datetime
+	c.barber = @barbers
+	c.save # данные будут записаны
+
+	erb "<h2> Recording... </h2>"
 
 	hh =    {
 			:username => 'Please, enter your name',
