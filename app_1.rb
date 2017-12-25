@@ -23,34 +23,43 @@ get '/' do
 end
 
 get '/visit' do
-	erb :visit
+	erb :visit_v2
 end
 
 post '/visit' do
-	@username = params[:username]
-	@phone = params[:phone]
-	@datetime = params[:datetime]
-	@barbers = params[:barbers]
-
-	c = Clients.new
-
-	c.name = @username
-	c.phone = @phone
-	c.datestamp = @datetime
-	c.barber = @barbers
-	c.save # данные будут записаны
-
+	c = Clients.new params[:clients]
+	c.save
 	erb "<h2> Recording... </h2>"
-
-	hh =    {
-			:username => 'Please, enter your name',
-			:phone => 'Please, enter your phone', 
-			:datetime => 'Please, enter visit day & time'
-			}
-
-	@error = hh.select {|key,_| params[key] == ""}.values.join("; ")
-
-	if @error != ''
-		return erb :visit
-	end
 end
+
+
+
+
+# post '/visit' do
+# 	@username = params[:username]
+# 	@phone = params[:phone]
+# 	@datetime = params[:datetime]
+# 	@barbers = params[:barbers]
+
+# 	c = Clients.new
+
+# 	c.name = @username
+# 	c.phone = @phone
+# 	c.datestamp = @datetime
+# 	c.barber = @barbers
+# 	c.save # данные будут записаны
+
+# 	erb "<h2> Recording... </h2>"
+
+# 	hh =    {
+# 			:username => 'Please, enter your name',
+# 			:phone => 'Please, enter your phone', 
+# 			:datetime => 'Please, enter visit day & time'
+# 			}
+
+# 	@error = hh.select {|key,_| params[key] == ""}.values.join("; ")
+
+# 	if @error != ''
+# 		return erb :visit
+# 	end
+# end
