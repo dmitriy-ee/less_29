@@ -32,8 +32,11 @@ end
 
 post '/visit' do
 	c = Clients.new params[:clients]
-	c.save
-	erb "<h2> Recording... </h2>"
+	if c.save
+		erb "<h2> Recording... </h2>"
+	else
+		erb "<h2> Erroroo... </h2>"
+	end
 end
 
 
